@@ -405,13 +405,13 @@ main (int argc, char **argv)
   dst = (cl_float *)malloc (matrix_2d_size * sizeof (cl_float));
   sums = (long *)calloc (matrix_size, sizeof (long));
 
-  srandom (time (NULL));
+  rand ();
 
   for (i = 0; i < matrix_size; ++i)
     {
       for (j = 0; j < matrix_size; ++j)
         {
-          long r = random ();
+          long r = rand ();
           int r1 = (r >> 8) % 64;
           int r2 = (r >> 16) % 64;
           sums[j] += r2;
