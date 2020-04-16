@@ -23,6 +23,31 @@ Installing requirements for Ubuntu::
 
     apt install -y build-essential ocl-icd-libopencl1 cmake git pkg-config libclang-dev clang llvm make ninja-build ocl-icd-libopencl1 ocl-icd-dev ocl-icd-opencl-dev libhwloc-dev zlib1g zlib1g-dev clinfo dialog apt-utils
 
+在ubuntu容器里面可以直接安装pocl::
+
+    apt install pocl-opencl-icd clinfo
+
+执行clinfo可以直接看到平台信息::
+
+  root@a97dff32902b:/# clinfo
+  Number of platforms                               1
+    Platform Name                                   Portable Computing Language
+    Platform Vendor                                 The pocl project
+    Platform Version                                OpenCL 1.2 pocl 1.1 None+Asserts, LLVM 6.0.0, SLEEF, POCL_DEBUG, FP16
+    Platform Profile                                FULL_PROFILE
+    Platform Extensions                             cl_khr_icd
+    Platform Extensions function suffix             POCL
+
+    Platform Name                                   Portable Computing Language
+  Number of devices                                 1
+    Device Name                                     pthread-0xd01
+    Device Vendor                                   0x48
+    Device Vendor ID                                0x13b5
+    Device Version                                  OpenCL 1.2 pocl HSTR: pthread-aarch64-unknown-linux-gnu-GENERIC
+    Driver Version                                  1.1
+    Device OpenCL C Version                         OpenCL C 1.2 pocl
+    Device Type                                     CPU
+
 Installing requirements for Arch Linux::
 
     pacman -S gcc patch hwloc cmake git pkg-config make ninja ocl-icd clang llvm llvm-libs clinfo opencl-headers
